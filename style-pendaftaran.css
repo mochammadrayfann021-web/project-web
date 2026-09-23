@@ -1,0 +1,306 @@
+/* ==========================================
+   STYLING SECTION PENDAFTARAN (DESAIN FINAL)
+   ========================================== */
+
+/* Area Utama Section dengan Gradient & Ornamen Lingkaran */
+.pendaftaran-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dekorasi Lingkaran Halus Latar Belakang (Aksen IPM) */
+.pendaftaran-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: rgba(241, 196, 15, 0.15); /* Kuning IPM transparan */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.pendaftaran-section::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: -80px;
+    width: 350px;
+    height: 350px;
+    background: rgba(44, 62, 80, 0.08); /* Navy transparan */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Memastikan Konten Utama Berada di Atas Background */
+.pendaftaran-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Judul dan Sub-judul Section */
+.pendaftaran-section .section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.pendaftaran-section .section-title h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+}
+
+.pendaftaran-section .section-title p {
+    color: #5a6578;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Container Pembungkus Google Form */
+.form-container {
+    max-width: 780px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-top: 6px solid #ce9a0c; /* Garis aksen kuning IPM */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.form-container iframe {
+    display: block;
+    width: 100%;
+    min-height: 1800px;
+    border: none;
+}
+
+/* Responsif Layar HP / Tablet */
+@media (max-width: 768px) {
+    .pendaftaran-section {
+        padding: 50px 15px;
+    }
+
+    .pendaftaran-section .section-title h2 {
+        font-size: 1.7rem;
+    }
+
+    .pendaftaran-section .section-title p {
+        font-size: 0.9rem;
+    }
+
+    .form-container {
+        border-radius: 12px;
+    }
+    
+    .form-container iframe {
+        min-height: 1850px;
+    }
+}
+/* ==========================================
+   STYLING FOTO BERDIRI DI POJOK KIRI & KANAN
+   ========================================== */
+
+/* Memastikan section pendaftaran menjadi acuan posisi foto */
+.pendaftaran-section {
+    padding: 80px 20px 0px 20px; /* Padding bawah 0 agar kaki foto menempel tepat di dasar section */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    position: relative; /* Wajib ada */
+    overflow: hidden;   /* Mencegah scrollbar mendatar jika foto agak keluar */
+}
+
+/* Base Styling Foto Berdiri */
+.foto-berdiri {
+    position: absolute;
+    bottom: 0;           /* Menempel tepat di bagian bawah section */
+    height: 480px;       /* Tinggi foto di layar PC/Laptop */
+    width: auto;
+    z-index: 3;          /* Berada di atas background dekorasi */
+    pointer-events: none;/* Agar foto tidak menghalangi klik jika agak menutupi area luar form */
+    transition: transform 0.3s ease;
+}
+
+/* Posisi Pojok Kiri Bawah */
+.foto-berdiri-kiri {
+    left: 20px;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15)); /* Efek bayangan halus */
+}
+
+/* Posisi Pojok Kanan Bawah */
+.foto-berdiri-kanan {
+    right: 20px;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15)); /* Efek bayangan halus */
+}
+
+/* Efek Hover (Atas Pilihan): Foto naik sedikit saat diarahkan cursor */
+.pendaftaran-section:hover .foto-berdiri-kiri {
+    transform: translateY(-8px);
+}
+.pendaftaran-section:hover .foto-berdiri-kanan {
+    transform: translateY(-8px);
+}
+
+/* ==========================================
+   RESPONSIF UNTUK LAYAR TABLET & HP
+   ========================================== */
+
+/* Layar Laptop Kecil / Tablet (Kecilkan Foto) */
+@media (max-width: 1200px) {
+    .foto-berdiri {
+        height: 380px;
+    }
+}
+
+/* Layar HP (Sembunyikan foto agar tidak menutupi isi form yang sempit) */
+@media (max-width: 768px) {
+    .foto-berdiri {
+        display: none; 
+    }
+    
+    .pendaftaran-section {
+        padding-bottom: 50px;
+    }
+}
+/* ==========================================
+   STYLING KOTAK HEADER TITLE PENDAFTARAN
+   ========================================== */
+
+.section-title-card {
+    background: #ffffff;
+    max-width: 780px;
+    margin: 0 auto 40px auto; /* Jarak ke bawah (ke Google Form) */
+    padding: 35px 30px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Bayangan lembut */
+    border-top: 5px solid #f1c40f; /* Aksen garis kuning IPM di atas kotak */
+    position: relative;
+    z-index: 2;
+}
+
+/* Badge/Label Kecil di Atas Judul */
+.badge-ipm {
+    display: inline-block;
+    background: rgba(241, 196, 15, 0.15); /* Kuning IPM transparan */
+    color: #d4ac0d;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Judul Utama */
+.section-title-card h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Garis Dekorasi Kecil di Bawah Judul */
+.title-line {
+    width: 60px;
+    height: 4px;
+    background: #2c3e50; /* Warna Navy */
+    margin: 0 auto 15px auto;
+    border-radius: 2px;
+}
+
+/* Sub-Judul / Deskripsi */
+.section-title-card p {
+    color: #5a6578;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   RESPONSIF TAMPILAN HP
+   ========================================== */
+@media (max-width: 768px) {
+    .section-title-card {
+        padding: 25px 20px;
+        margin-bottom: 25px;
+    }
+
+    .section-title-card h2 {
+        font-size: 1.6rem;
+    }
+
+    .section-title-card p {
+        font-size: 0.88rem;
+    }
+}
+/* ==========================================
+   STYLING TOMBOL KEMBALI KE BERANDA
+   ========================================== */
+
+.btn-back-wrapper {
+    max-width: 780px;
+    margin: 0 auto 20px auto; /* Memberi jarak ke kotak judul */
+    text-align: left; /* Posisikan tombol di sebelah kiri atas */
+}
+
+.btn-back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #ffffff;
+    color: #2c3e50; /* Warna Navy IPM */
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+/* Animasi Panah saat Hover */
+.btn-back-home .arrow {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-back-home:hover {
+    background: #2c3e50; /* Berubah jadi Navy saat di-hover */
+    color: #f1c40f;     /* Teks & panah jadi Kuning IPM */
+    border-color: #2c3e50;
+    box-shadow: 0 6px 18px rgba(44, 62, 80, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-back-home:hover .arrow {
+    transform: translateX(-4px); /* Panah bergerak ke kiri sedikit */
+}
+
+/* ==========================================
+   RESPONSIF TAMPILAN HP
+   ========================================== */
+@media (max-width: 768px) {
+    .btn-back-wrapper {
+        margin-bottom: 15px;
+    }
+    
+    .btn-back-home {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}

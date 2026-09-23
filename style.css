@@ -1,0 +1,580 @@
+/* Reset & Styling Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #f1c40f;
+    --primary-dark: #d4ac0d;
+    --secondary: #010a0a;
+    --dark: #1a252f;
+    --light: #f8f9fa;
+    --gray: #6c757d;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header & Navigasi */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.logo-icon {
+    font-size: 1.8rem;
+    color: var(--primary-dark);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-dark);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/pripmicc.jpeg") center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.badge {
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin: 15px 0;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--dark);
+    margin-right: 10px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    color: var(--dark);
+}
+
+/* Section General */
+section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    color: var(--dark);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.about-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+/* Banner Pendaftaran */
+.registration-banner {
+    background-color: var(--secondary);
+    color: #fff;
+    text-align: center;
+}
+
+.registration-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.btn-register-large {
+    background-color: var(--primary);
+    color: var(--dark);
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    margin-top: 20px;
+
+}
+
+.btn-register-large:hover {
+    background-color: var(--primary-dark);
+}
+
+/* PDD Section */
+.pdd-section {
+    background-color: #fff;
+}
+
+.pdd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.pdd-item {
+    padding: 20px;
+    border-left: 4px solid var(--primary-dark);
+    background-color: var(--light);
+}
+
+.pdd-item i {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+/* Pimpinan & Pembina */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.filter-btn.active {
+    background-color: var(--primary);
+    color: var(--dark);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.team-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.team-img-wrapper {
+    position: relative;
+    height: 250px;
+}
+
+.team-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.role-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.pembina-badge {
+    background-color: var(--secondary);
+    color: #fff;
+}
+
+.team-info {
+    padding: 20px;
+}
+
+.team-info h3 {
+    font-size: 1.1rem;
+}
+
+.position {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 0.85rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: var(--dark);
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.bidang-block {
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    border-top: 4px solid #f1c40f; 
+}
+
+.bidang-title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #e0e0e0; 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bidang-title i {
+    color: #f1c40f;
+}
+/* ==========================================
+   PERBAIKAN LOGO INSTAGRAM DI KARTU ANGGOTA
+   ========================================== */
+
+/* Pastikan area link sosial media posisinya benar */
+.team-card .social-links {
+    display: flex;
+    justify-content: center; /* Rata tengah */
+    gap: 10px; /* Jarak antar ikon jika ada lebih dari 1 */
+    margin-top: 10px; /* Jarak dari teks nama/jabatan */
+    width: 100%;
+}
+
+/* Mengatur wadah lingkaran ikon IG */
+.team-card .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Ukuran lingkaran fixed */
+    height: 35px; /* Ukuran lingkaran fixed */
+    background-color: #f1c40f; /* Warna kuning IPM */
+    color: #ffffff; /* Warna ikon putih */
+    border-radius: 50%; /* Membuat jadi lingkaran sempurna */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px; /* Ukuran ikon di dalam lingkaran */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Bayangan halus */
+}
+
+/* Efek Hover (Saat kursor di atas ikon) */
+.team-card .social-links a:hover {
+    background-color: #d4ac0d; /* Warna kuning lebih gelap */
+    transform: translateY(-3px); /* Sedikit naik ke atas */
+}
+
+/* Memastikan ikon Font Awesome-nya sendiri tidak melar */
+.team-card .social-links a i {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+.logo img {
+    width: 40px;   /* Atur lebarnya saja */
+    height: auto;  /* Tingginya otomatis menyesuaikan agar tidak gepeng */
+}
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("images/pripmicc.jpeg") center/cover no-repeat;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto; /* Tambahan: memastikan konten tetap di tengah */
+    padding: 0 15px; /* Tambahan: agar tidak menempel di pinggir HP */
+}
+
+/* --- TAMBAHKAN KODE INI DI BAWAH .hero-content --- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; /* Memberi jarak konsisten antar tombol */
+    flex-wrap: wrap; /* Izinkan turun ke bawah jika layar sempit */
+}
+
+.badge {
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin: 15px 0;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+    text-align: center;
+}
+
+/* UBAH BAGIAN INI (Hapus margin-right agar tidak miring di HP) */
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--dark);
+    /* margin-right: 10px; <-- Hapus baris ini */
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    color: var(--dark);
+}
+/* Responsive Navbar & Layout HP */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* --- TAMBAHKAN BAGIAN KODE DI BAWAH INI UTK STRUKTUR TOMBOL HP --- */
+    .hero {
+        height: auto;
+        min-height: 80vh;
+        padding: 60px 0;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Ubah urutan jadi tumpuk ke bawah di HP */
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%; /* Buat tombol melebar penuh di layar HP agar rapi */
+        max-width: 300px; /* Batas lebar maksimum tombol di HP */
+    }
+}
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-socials a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+    display: inline-block; /* Memastikan area sentuh di HP pas */
+}
+
+.footer-socials a:hover {
+    color: var(--primary); /* Efek warna kuning IPM saat di-hover */
+}
